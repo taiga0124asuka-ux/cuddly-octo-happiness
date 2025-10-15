@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>ブロックパズル（モバイル対応）</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="info-panel">
+            <h2>SCORE: <span id="score">0</span></h2>
+            <h2>LEVEL: <span id="level">1</span></h2>
+            
+            <div class="info-box">
+                <h3>HOLD (X)</h3>
+                <canvas id="hold-canvas" width="120" height="100"></canvas>
+            </div>
+            
+            <div class="info-box">
+                <h3>NEXT (5手先)</h3>
+                <div id="next-container">
+                    <canvas id="next-canvas-1" class="next-block-canvas" width="120" height="100"></canvas>
+                    <canvas id="next-canvas-2" class="next-block-canvas" width="120" height="100"></canvas>
+                    <canvas id="next-canvas-3" class="next-block-canvas" width="120" height="100"></canvas>
+                    <canvas id="next-canvas-4" class="next-block-canvas" width="120" height="100"></canvas>
+                    <canvas id="next-canvas-5" class="next-block-canvas" width="120" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <canvas id="game-board" width="300" height="600"></canvas>
+    </div>
+
+    <div id="mobile-controls">
+        <button id="btn-hold" class="control-btn">HOLD (X)</button>
+        <button id="btn-rotate-left" class="control-btn">Q (左回転)</button>
+        <button id="btn-rotate-right" class="control-btn">W (右回転)</button>
+        <button id="btn-hard-drop" class="control-btn">DROP (Space)</button>
+    </div>
+
+    <div id="game-over-screen" class="hidden">
+        <h1>GAME OVER</h1>
+        <p>最終スコア: <span id="final-score">0</span></p>
+        <button onclick="startGame()">もう一度プレイ</button>
+        <p>本ゲームは非営利のファン作品であり、オリジナルの権利者とは一切関係ありません</p>
+    </div>
+
+    <script src="1.js"></script>
+</body>
+</html>
